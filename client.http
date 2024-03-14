@@ -1,10 +1,5 @@
 @baseUrl = http://localhost:3000
 
-# list notifications
-GET {{baseUrl}}/notifications
-Content-Type: application/json
-
-###
 #create notifications
 POST {{baseUrl}}/notifications
 Content-Type: application/json
@@ -14,5 +9,35 @@ Content-Type: application/json
   "category": "social",
   "recipientId": "{{$guid}}"
 }
+
+###
+
+#count notifications from recipient
+GET {{baseUrl}}/notifications/count/from/85f84e9d-b81e-48cc-abe0-e373f02be25b
+Content-Type: application/json
+
+###
+
+#get notifications from recipient
+GET {{baseUrl}}/notifications/from/85f84e9d-b81e-48cc-abe0-e373f02be25b
+Content-Type: application/json
+
+###
+
+#read notification
+PATCH {{baseUrl}}/notifications/261922ff-087f-4a34-ba86-02b30eb447f0/read
+Content-Type: application/json
+
+###
+
+#unread notification
+PATCH {{baseUrl}}/notifications/261922ff-087f-4a34-ba86-02b30eb447f0/unread
+Content-Type: application/json
+
+###
+
+#cancel notification
+PATCH {{baseUrl}}/notifications/261922ff-087f-4a34-ba86-02b30eb447f0/cancel
+Content-Type: application/json
 
 ###
